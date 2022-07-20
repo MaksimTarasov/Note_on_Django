@@ -1,0 +1,20 @@
+<!DOCtype HTML>
+<html>
+<head>
+  <title>TODO</title>
+  <form method='POST'>
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" title='send'>
+  </form>
+  <div>
+    <p>{% for i in choice.values %}
+    
+            {{i.name2}} - {{i.comment2}}<br>
+       
+      {%endfor%}</p>
+  </div>  
+</head>
+<body>
+</body>
+</html>

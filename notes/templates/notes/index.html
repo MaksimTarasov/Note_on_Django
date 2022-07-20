@@ -1,0 +1,26 @@
+{%extends "todo/base.html"%}
+
+{%block my_title%}Мои записи{%endblock%}
+{%block my_body%}
+<div id='head_page'>
+  <div id='notes_title'>Список дел {{notes}}</div>
+</div>
+<br>
+<hr>
+<div id="main_text">
+  {%for i_notes in notes_list%}
+  <div "notes">
+    <div "notes_title">{{i_notes.title_of_note}}</div>
+    <div "notes_autor">{{i_notes.autor_of_note.nic_name}}</div>
+    <div "notes_date">{{i_notes.date_of_note }}</div>
+  </div>
+  {%endfor%}
+</div>
+<br>
+<hr>
+<div id="menu">
+  <div id="make_note"><a href ='create_note'>Создать запись</a></div>
+</div>
+{%endblock%}
+
+

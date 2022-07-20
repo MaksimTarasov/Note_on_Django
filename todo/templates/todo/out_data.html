@@ -1,0 +1,22 @@
+{%extends "todo/base.html"%}
+
+{%block my_title%}Вывод данных из базы{%endblock%}
+{%block my_body%}
+
+  <form method='POST'>
+    {% csrf_token %}
+     {{frm}}
+  {% for i_record in records%}
+    <ul>
+     
+      <li>{{i_record}}</li>
+      <input type ='checkbox' name='choice' value = '{{i_record.get_url}}'>
+      <li><a href={{i_record.get_url}}>{{i_record.return_title}}</a></li>
+      
+    </ul>
+  {%endfor%}
+  <input type='submit' value='delete' name = 'delete'>
+  </form>
+    
+{%endblock%}
+  

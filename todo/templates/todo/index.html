@@ -1,0 +1,23 @@
+<!DOCtype HTML>
+<html>
+<head>
+  <title>TODO</title>
+  <a href='all_data'>all_data</a>
+  <a href='index_new'>TestModel</a>
+  {{my_text}}
+  <form method='POST'>
+    {% csrf_token %}
+    {{main_form}}
+    <input type="submit" title='send'>
+  </form>
+  <div>
+    <p>{% for i in comment.values %}
+    
+            {{i.name}} - {{i.comment}}<br>
+       
+      {%endfor%}</p>
+  </div>
+</head>
+<body>
+</body>
+</html>
