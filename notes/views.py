@@ -11,7 +11,7 @@ def index(request):
 
 def create_note(request):
   """
-  СОздание 
+  СОздание записи в блокноте
   """
   if request.method == 'POST':
     pass
@@ -22,6 +22,8 @@ def create_note(request):
     # com = mainform.cleaned_data['comment']
     # comment_db =  models.Comment.objects.create(name = nam, comment = com) 
   else:
-    create_form = forms.MainForm()
+    default_note = models.Notes.objects.get(id=1)
+    #Создаем форму с дефолтной записью, id=1
+    create_form = forms.MainForm(instance = default_note)
     content = {'create_form':create_form}
     return render(request, 'notes/create_note.html', content)
