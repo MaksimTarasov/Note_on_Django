@@ -16,7 +16,7 @@ class Autor(models.Model):
   avatar = models.CharField(verbose_name='Аватарка', max_length=200)
 
   def __str__(self):
-    return f'{self.name} AKA {self.nic_name}'
+    return f'{self.name}'
 
 class Notes(models.Model):
   """

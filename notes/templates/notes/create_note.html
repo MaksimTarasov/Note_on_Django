@@ -8,7 +8,11 @@
 <br>
 <hr>
 <div id="create_form">
-  <form>{{create_form}}</form>
+  <form method ="POST">
+    {%csrf_token%}
+    {{create_form}}
+    <input type="submit" value="Send">
+  </form>
 </div>
 <br>
 <hr>
